@@ -1,0 +1,31 @@
+# Build Directories and Generated Files
+build/
+bin/
+cmake-build-*/
+.cache/
+
+# Binary output intermediates
+*.elf
+*.bin
+*.hex
+*.dis
+*.map
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Blender temporary backup files
+*.blend1
+*.blend2
