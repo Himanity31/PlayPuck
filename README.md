@@ -7,7 +7,7 @@
 [![Sensor](https://img.shields.io/badge/Encoder-AS5600%20(12--bit)-blue.svg)]()
 [![Display](https://img.shields.io/badge/Display-ILI9341%20(320x240)-green.svg)]()
 
-PlayPuck is a custom pocket/desk gaming console built around a smooth, continuous rotary dial. Unlike traditional handhelds with D-pads and thumbsticks, PlayPuck explores **rotary-first gameplay mechanics**—from angular velocity blade combat to high-precision safe-cracking puzzles with visual tactile simulation.
+PlayPuck is a custom pocket gaming console built around a smooth, continuous rotary dial. Unlike traditional handhelds with D-pads and thumbsticks, PlayPuck explores **rotary-first gameplay mechanics**—from angular velocity blade combat to high-precision safe-cracking puzzles with visual tactile simulation.
 
 ---
 
