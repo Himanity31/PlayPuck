@@ -49,3 +49,21 @@ target_link_libraries(display_test
 pico_enable_stdio_usb(display_test 1)
 pico_enable_stdio_uart(display_test 0)
 pico_add_extra_outputs(display_test)
+
+# --- PlayPuck High-Performance Video & Display Streamer ---
+add_executable(video_player
+    video_player.cpp
+)
+target_link_libraries(video_player
+    pico_stdlib
+    pico_multicore
+    hardware_spi
+    hardware_i2c
+    hardware_dma
+    hardware_vreg
+    hardware_clocks
+)
+pico_enable_stdio_usb(video_player 1)
+pico_enable_stdio_uart(video_player 0)
+pico_add_extra_outputs(video_player)
+

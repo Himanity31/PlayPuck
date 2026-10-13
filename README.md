@@ -28,7 +28,13 @@ A fast-paced arena action game running bare-metal on the RP2040:
 * **Angular-Velocity Damage:** The faster you whip the physical dial, the more kinetic damage your blade deals to swarming grunts and brutes.
 * **1-Bit Bayer Dithered Rendering:** Custom streaming engine delivering rock-solid 50+ FPS over overclocked 62.5 MHz SPI with DMA.
 
-### 3. DISPLAY & HARDWARE TEST
+### 3. VIDEO & CINEMA STREAMER (High-Speed USB Playback)
+Real-time 60 FPS video streaming directly to the ILI9341 display over USB CDC:
+* **Dual-Core Asymmetric Pipeline:** Core 0 handles high-speed USB bulk transfers; Core 1 coordinates display refreshes and rotary inputs.
+* **Zero-Copy Hardware DMA:** Pushes frames over overclocked SPI with zero CPU overhead.
+* **Desktop Streamer (`tools/play_video.py`):** Automatically resizes, Bayer-dithers, and streams any video (`.mp4`, `.mkv`, anime clips) to the PlayPuck console with live aspect-ratio modes.
+
+### 4. DISPLAY & HARDWARE TEST
 A standalone diagnostic utility to verify ILI9341 color channels, RGB alignment, and SPI signal integrity.
 
 ---
@@ -41,9 +47,18 @@ You don't need to install any compilers or toolchains to play. Pre-compiled UF2 
 2. Connect the USB-C cable to your computer (or tap RESET while holding BOOT).
 3. Release the **BOOT** button. The board mounts as a drive named `RPI-RP2`.
 4. Drag and drop any `.uf2` file onto the drive:
+   * [`binaries/video_player.uf2`](binaries/video_player.uf2) — *High-Speed USB Video & Display Streamer*
    * [`binaries/safecracker.uf2`](binaries/safecracker.uf2) — *Safe Dial Rogue-Lite*
    * [`binaries/spinblade.uf2`](binaries/spinblade.uf2) — *Orbital Action Defender*
-5. The console reboots automatically into the game!
+5. The console reboots automatically!
+
+### Streaming Video to PlayPuck
+Once `video_player.uf2` is flashed, stream any video from your Mac or PC:
+```bash
+python3 -m pip install opencv-python pyserial numpy
+python3 tools/play_video.py path/to/your_video.mp4
+```
+
 
 ---
 
@@ -93,6 +108,7 @@ PlayPuck/
 ├── README.md                 # Project Documentation
 │
 ├── binaries/                 # Ready-to-flash .uf2 files
+│   ├── video_player.uf2      # High-Speed USB Video & Display Streamer
 │   ├── safecracker.uf2
 │   ├── spinblade.uf2
 │   └── display_test.uf2
@@ -100,9 +116,13 @@ PlayPuck/
 ├── firmware/                 # C++ Source Code (Pico SDK)
 │   ├── CMakeLists.txt
 │   ├── pico_sdk_import.cmake
+│   ├── video_player.cpp      # DMA Video Streamer Firmware
 │   ├── safecracker.cpp       # Safe Cracker Rogue-Lite
 │   ├── spinblade.cpp         # Spinblade Action Defender
 │   └── display_test.cpp      # Hardware Diagnostic Tool
+│
+├── tools/                    # Host utilities & streaming scripts
+│   └── play_video.py         # Real-time video player & dithering streamer
 │
 ├── cad/                      # 3D Mechanical Files
 │   ├── Knob_w_as5600.step    # Production STEP model with AS5600 mount
