@@ -427,7 +427,7 @@ def main():
     parser.add_argument("--port", "-p", default="", help="Serial port (default: auto-detect)")
     parser.add_argument("--mono", "-m", action="store_true", help="Start in 1-Bit Retro Cinema mode")
     parser.add_argument("--fps", type=float, default=30.0, help="Maximum target FPS")
-    parser.add_argument("--start", "-s", type=float, default=180.0, help="Start time in seconds (default: 180s)")
+    parser.add_argument("--start", "-s", type=float, default=0.0, help="Start time in seconds (default: 0s)")
     args = parser.parse_args()
 
     if not args.video:

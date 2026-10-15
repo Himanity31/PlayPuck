@@ -7,7 +7,13 @@
 [![Sensor](https://img.shields.io/badge/Encoder-AS5600%20(12--bit)-blue.svg)]()
 [![Display](https://img.shields.io/badge/Display-ILI9341%20(320x240)-green.svg)]()
 
-PlayPuck is a custom pocket gaming console built around a smooth, continuous rotary dial. Unlike traditional handhelds with D-pads and thumbsticks, PlayPuck explores **rotary-first gameplay mechanics**—from angular velocity blade combat to high-precision safe-cracking puzzles with visual tactile simulation.
+PlayPuck (also known as KURU) is a custom pocket gaming console built around a smooth, continuous rotary dial. Unlike traditional handhelds with D-pads and thumbsticks, PlayPuck explores **rotary-first gameplay mechanics**—from angular velocity blade combat to high-precision safe-cracking puzzles with visual tactile simulation, fast-paced racing with steering wheel dynamics, and 60 FPS video playback.
+
+<p align="center">
+  <img src="media/kuru_hardware_front.png" width="31%" alt="KURU / PlayPuck Hardware" />
+  <img src="media/kuru_driver_gameplay.png" width="31%" alt="Driver GBC with Rotary Steering" />
+  <img src="media/kuru_pokemon_gameplay.png" width="31%" alt="Pokemon Color on KURU" />
+</p>
 
 ---
 
@@ -128,8 +134,11 @@ PlayPuck/
 │   ├── Knob_w_as5600.step    # Production STEP model with AS5600 mount
 │   └── console_demo.blend    # Blender 3D console model & renders
 │
-└── media/                    # Gameplay and hardware demonstration
-    └── playpuck_demo.mp4     # Video demonstration
+└── media/                    # Hardware photos & video demonstrations
+    ├── kuru_hardware_front.png   # Production hardware front view
+    ├── kuru_driver_gameplay.png  # Driver GBC racing with rotary steering
+    ├── kuru_pokemon_gameplay.png # Pokemon GBC in-game color display
+    └── playpuck_demo.mp4         # Video demonstration
 ```
 
 ---
